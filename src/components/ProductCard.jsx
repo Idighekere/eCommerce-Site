@@ -1,15 +1,14 @@
 import React from "react";
 import { IoCartSharp } from "react-icons/io5";
 import ProductDetail from "./ProductDetail";
-
-import { CartContext } from "../context/cart";
-import { useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 // minified version is also included
 import "react-toastify/dist/ReactToastify.min.css";
 
+import { CartContext } from "../context/cart";
+import { useContext } from "react";
 const ProductCard = ({ product }) => {
   const [isDetailOpen, setIsDetailOpen] = React.useState(false);
 
@@ -30,22 +29,34 @@ const ProductCard = ({ product }) => {
     document.body.style.overflow = isDetailOpen === false ? "hidden" : "auto";
   };
   const toastAddToCart = () => {
-    toast("🦄 Wow so easy!", {
+    toast.success("🦄 Wow so easy!", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: "dark",
       transition: Bounce,
     });
   };
   return (
     <main className=" ">
-      {" "}
-      <div className="border p-5 shadow-lg rounded-md   h-[430px] bg-white">
+      {/* <ToastContainer
+position="top-right"
+autoClose={1500}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss={false}
+draggable
+pauseOnHover={false}
+theme="dark"
+transition: Bounce,
+/> */}
+      <div className="border p-5 shadow-lg rounded-md  h-[430px] bg-white">
         <div
           className="aspect-w-1 aspect-h-1 mb-4 bg-transparent"
           key={product.id}
@@ -65,7 +76,7 @@ const ProductCard = ({ product }) => {
               className="flex items-center rounded-sm hover:bg-gray-700 bg-gray-800 p-2 px-3  text-white"
               onClick={() => {
                 addToCart(product);
-                toastAddToCart;
+                toastAddToCart();
               }}
             >
               Add to Cart {/*<IoCartSharp className="text-white" /> */}

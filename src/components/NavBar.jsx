@@ -93,7 +93,12 @@ const NavBar = () => {
         )}
         <Logo />
         <div className="hidden md:flex md:mr-auto gap-2">
-          <NavLink to="/" className="text-lg font-[400px] ml-4">
+          <NavLink
+            to="/"
+            className="text-lg font-[400px] ml-4 active:border-b-2 hover:bg-gray-500"
+            // activeClassName="activeStyles"
+            exact
+          >
             HOME
           </NavLink>
           <NavLink to="/product" className="text-lg font-[400px]">
