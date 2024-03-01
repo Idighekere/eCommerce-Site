@@ -12,8 +12,8 @@ const App = () => {
     <div className="bg-gray-100">
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          {/* <Route index element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
           {/* <Route path="/cart" element={<Cart />} /> */}
           {/* <Route path="/cart" element={<Cart />} /> */}

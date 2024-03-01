@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Logo from "../assets/Logo";
 import {
   IoCartOutline,
-  IoCartSharp,
   IoMenuSharp,
   IoClose,
   IoLogInOutline,
