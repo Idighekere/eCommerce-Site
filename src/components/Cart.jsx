@@ -84,8 +84,9 @@ const Cart = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-contain w-full h-64 rounded-md cursor-pointer transform hover:scale-110 transition-transform duration-300 hover:opacity-70 max-w-64"
+                        className="object-contain w-full h-64 rounded-md cursor-pointer transform  hover:opacity-70 max-w-64"
                       />
+                      {/* hover:scale-110 transition-transform duration-300 */}
                       <div className="flex flex-col items-center text-center sm:text-start sm:items-start w-full">
                         <div>
                           <h1 className="text-lg font-semibold">
@@ -98,13 +99,13 @@ const Cart = () => {
                             onClick={() => {
                               addToCart(item);
                             }}
-                            className="bg-gray-800 text-white px-1 py-0 rounded-sm"
+                            className="bg-gray-800 text-white px-2 py-0 rounded-sm"
                           >
                             +
                           </button>
                           <p className="p-1">{item.quantity}</p>
                           <button
-                            className="bg-gray-800 text-white px-1 py-0 rounded-sm "
+                            className="bg-gray-800 text-white px-2 py-0 rounded-sm "
                             onClick={() => {
                               removeFromCart(item);
                             }}
