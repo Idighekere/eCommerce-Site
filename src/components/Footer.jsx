@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <div>
       <footer>
-        <div className="bg-gray-800 text-white py-12 w-full mt-4 p-5 lg:min-h-[550px] lg:justify-end lg:flex lg:flex-col">
+        <div className="bg-gray-800 text-white py-12 w-full mt-4 p-5 lg:min-h-[550px] lg:justify-end lg:flex lg:flex-col h-3/4">
           <div className="grid w-full grid-cols-2 md:grid-cols-4 gap-8">
             <div className="">
               {/* Footer Title */}
@@ -35,9 +35,9 @@ const Footer = () => {
               <h1 className="uppercase text-lg font-bold">Shopping</h1>{" "}
               <div className="grid">
                 <a href="Product">Products</a>
-                <a href="about">FAQ</a>
-                <a href="about">Shipping</a>
-                <a href="about">Shipping</a>
+                <a href="faq">FAQ</a>
+                <a href="shiping">Shipping</a>
+                <a href="payment">Payment</a>
               </div>
             </div>
             <div>
@@ -46,7 +46,7 @@ const Footer = () => {
               <div className="grid">
                 <a href="/login">Login</a>
                 <a href="/cart">View Cart</a>
-                <a href="contact">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </div>
             </div>
             <div>
@@ -58,13 +58,13 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className=" border-0 px-3 py-1 placeholder:text-black text-black rounded-sm"
+                  className=" border-0 px-3 py-1 placeholder:text-black text-black rounded-sm w-2/3 sm:w-full"
                 />
                 <a
                   href="mailto:idighekereudo@gmail.com"
                   className="text-3xl absolute text-black right-1"
                 >
-                  <IoMail />
+                  <IoMail className="text-white sm:text-gray-800" />
                 </a>
               </div>
             </div>

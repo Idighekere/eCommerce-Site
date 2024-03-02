@@ -29,16 +29,16 @@ const ProductCard = ({ product }) => {
     document.body.style.overflow = isDetailOpen === false ? "hidden" : "auto";
   };
   const toastAddToCart = () => {
-    toast.success("🦄 Wow so easy!", {
+    toast.success("Product added to cart", {
       position: "top-right",
-      autoClose: 1500,
+      autoClose: 500,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: false,
+      pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "dark",
-      transition: Bounce,
+      // transition: Bounce,
     });
   };
   return (
@@ -74,6 +74,20 @@ const ProductCard = ({ product }) => {
       {isDetailOpen && (
         <ProductDetail product={product} closeDetail={closeDetail} />
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        // transition="bounce"
+        // className="bounce"
+      />
     </main>
   );
 };

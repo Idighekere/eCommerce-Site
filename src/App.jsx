@@ -6,6 +6,7 @@ import Error from "./pages/Error";
 
 import LogIn from "./pages/LogIn.jsx";
 import Register from "./pages/Register.jsx";
+import Contact from "./pages/Contact.jsx";
 // import Cart from "./components/Cart";
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/login" element={<LogIn />} />
 
           <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

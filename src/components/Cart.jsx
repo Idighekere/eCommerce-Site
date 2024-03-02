@@ -4,6 +4,12 @@ import { useContext } from "react";
 import { CartContext } from "../context/cart";
 import EmptyCart from "../assets/Empty Cart.png";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+// minified version is also included
+import "react-toastify/dist/ReactToastify.min.css";
+
 const Cart = () => {
   const {
     cartItems,
@@ -13,8 +19,47 @@ const Cart = () => {
     getCartTotal,
     removeItem,
   } = useContext(CartContext);
+  const toastRemoveFromCart = () => {
+    toast.success("Product removed from cart", {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      // transition: Slide,
+    });
+  };
+  const toastClearCart = () => {
+    toast.success("Cart Cleared", {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      // transition: Slide,
+    });
+  };
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        // transition={Slide}
+      />
       <div className="absolute bg-gray-100 top-14 right-0 md:right-7 p-4 h-full md:h-3/4 z-10 w-full md:w-1/2 shadow-md rounded-md overflow-y-scroll">
         {/* <NavBar /> */}
         <div className="flex flex-col items-center  justify-center  pt-2 gap-4">
@@ -25,13 +70,14 @@ const Cart = () => {
             ) : (
               <div>
                 {cartItems.map((item) => (
-                  <div className="flex items-center gap-3 border-2 mb-2 bg-white p-2 shadow-lg rounded-md ">
-                    <div className="items-center flex relative flex-col sm:flex-row justify-center gap-2">
+                  <div className="flex items-center gap-3 border-2 mb-2 bg-white p-2 shadow-lg rounded-md w-full">
+                    <div className="items-center flex relative flex-col sm:flex-row justify-center gap-2 w-full">
                       <div className="absolute top-5 right-5  ">
                         <IoTrashSharp
                           className="text-gray-500 hover:text-red-600 cursor-pointer text-lg"
                           onClick={() => {
                             removeItem(item);
+                            toastRemoveFromCart();
                           }}
                         />
                       </div>
@@ -40,7 +86,7 @@ const Cart = () => {
                         alt={item.title}
                         className="object-contain w-full h-64 rounded-md cursor-pointer transform hover:scale-110 transition-transform duration-300 hover:opacity-70 max-w-64"
                       />
-                      <div className="flex flex-col items-center text-center sm:text-start sm:items-start">
+                      <div className="flex flex-col items-center text-center sm:text-start sm:items-start w-full">
                         <div>
                           <h1 className="text-lg font-semibold">
                             {item.title}
@@ -87,7 +133,10 @@ const Cart = () => {
                   <div className="self-end">
                     <button
                       className="bg-red-600 text-white rounded-sm px-2 py-1 items-end"
-                      onClick={clearCart}
+                      onClick={() => {
+                        clearCart();
+                        toastClearCart();
+                      }}
                     >
                       Clear Cart
                     </button>

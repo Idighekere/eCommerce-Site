@@ -81,7 +81,7 @@ const NavBar = () => {
               </a>
               {/* <CartIcon /> */}
               <div className="">
-                <div className="bottom-1  flex justify-start gap-1 left-2 absolute px-2 flex-wrap">
+                <div className="bottom-10  flex justify-start gap-1 left-2 absolute px-2 flex-wrap">
                   <a href="/about">About | </a>
                   <a href="/about">Contact Us |</a>
                   <a href="/about">Privacy Policy</a>
