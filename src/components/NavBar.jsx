@@ -96,7 +96,6 @@ const NavBar = () => {
             to="/"
             className="text-lg font-[400px] ml-4 active:border-b-2 hover:bg-gray-500"
             // activeClassName="activeStyles"
-            exact
           >
             HOME
           </NavLink>

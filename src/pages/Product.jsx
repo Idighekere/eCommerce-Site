@@ -26,7 +26,7 @@ const Product = () => {
       <NavBar />
       <h1 className="text-3xl text-center font-bold mt-3">SHOP</h1>{" "}
       <div className="p-3 px-6 sm:px-20  ">
-        <ProductList products={products} loading={loading} />
+        <ProductList products={products} loading={loading} key={products.id} />
       </div>
       {/* <>
         {products.map((product) => (

@@ -43,19 +43,6 @@ const ProductCard = ({ product }) => {
   };
   return (
     <main className=" ">
-      {/* <ToastContainer
-position="top-right"
-autoClose={1500}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss={false}
-draggable
-pauseOnHover={false}
-theme="dark"
-transition: Bounce,
-/> */}
       <div className="border p-5 shadow-lg rounded-md  h-[430px] bg-white">
         <div
           className="aspect-w-1 aspect-h-1 mb-4 bg-transparent"
