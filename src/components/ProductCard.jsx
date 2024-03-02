@@ -12,6 +12,12 @@ import { useContext } from "react";
 const ProductCard = ({ product }) => {
   const [isDetailOpen, setIsDetailOpen] = React.useState(false);
 
+  // Restoring overflow property when the component unmounts or on specific conditions
+  React.useEffect(() => {
+    return () => {
+      document.body.style.overflow = "auto"; // Restore to original state when the component unmounts
+    };
+  }, []);
   const { cartItems, addToCart } = useContext(CartContext);
   const openDetail = () => {
     setIsDetailOpen(!isDetailOpen);
@@ -43,7 +49,7 @@ const ProductCard = ({ product }) => {
   };
   return (
     <main className=" ">
-      <div className="border p-5 shadow-lg rounded-md  h-[430px] bg-white">
+      <div className="border p-5 shadow-lg rounded-md  h-[430px] bg-white md:max-w-64">
         <div
           className="aspect-w-1 aspect-h-1 mb-4 bg-transparent"
           key={product.id}
@@ -51,7 +57,7 @@ const ProductCard = ({ product }) => {
           <img
             src={product.image}
             alt={product.title}
-            className="object-contain w-full h-64 rounded-md cursor-pointer transform hover:scale-110 transition-transform duration-300 hover:opacity-70"
+            className="object-contain w-full h-64 rounded-md cursor-pointer transform hover:scale-110 transition-transform duration-300 hover:opacity-70 max-w-80"
             onClick={openDetail}
           />
         </div>{" "}

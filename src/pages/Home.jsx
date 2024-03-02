@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <div className="px-3 mt-10">
+      <div className="px-7 mt-10">
         {" "}
         <Hero />
       </div>{" "}
@@ -37,8 +37,13 @@ const Home = () => {
       </section>
       <h1 className="text-2xl font-bold text-center my-4">FEATURED PRODUCTS</h1>
       <div className="flex gap-3 overflow-y-scroll px-10">
-        {featuredProducts.map((fprod) => {
-          return <FeaturedProductsCard fprod={fprod} loading={isLoading} />;
+        {featuredProducts.map((product) => {
+          return (
+            <>
+              <FeaturedProductsCard product={product} loading={isLoading} />
+              {/* <ProductCard product={product} /> */}
+            </>
+          );
         })}
       </div>
       {/* <Component /> */}
@@ -66,7 +71,7 @@ const SectionOne = () => {
   ];
   return (
     <>
-      <div className="flex gap-3 md:flex-row flex-col">
+      <div className="flex gap-5 md:flex-row flex-col">
         {cardData.map((data) => {
           return (
             <div

@@ -26,9 +26,17 @@ const NavBar = () => {
   const toggleCart = () => {
     setCartIsOpen(!cartIsOpen);
     setIsOpen(false);
-    // document.body.style.overflow = cartIsOpen ? "auto" : "hidden";
+    document.body.style.overflow = cartIsOpen ? "auto" : "hidden";
   };
+  // Restoring overflow property when the component unmounts or on specific conditions
+  React.useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
 
+    // Cleanup function to restore overflow property when the component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
   const CartIcon = () => {
     return (
       <div

@@ -17,7 +17,7 @@ const Hero = () => {
           <h1 className="text-3xl font-bold md:text-4xl md:my-4 ">
             Make Commerce better for every one
           </h1>
-          <p className="md:text-3xl text-lg">
+          <p className="sm:text-lg lg:text-3xl text-lg">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id neque
             voluptates ipsa a vitae dicta est harum soluta optio omnis. Lorem
             ipsum dolor, sit amet consectetur adipisicing elit. Qui, incidunt
@@ -29,7 +29,7 @@ const Hero = () => {
           </p>
           <a href="/product">
             {" "}
-            <button className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md sm:bg-transparent sm:border sm:border-white mt-3">
+            <button className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-3 rounded-md sm:bg-transparent sm:border sm:border-white mt-3 text-lg">
               Start Shopping
             </button>
           </a>{" "}
