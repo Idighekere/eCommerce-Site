@@ -39,13 +39,13 @@ const FeaturedProductsCard = ({ product, loading }) => {
         // transition="bounce"
         // className="bounce"
       />
-      {loading===true ? (
+      {loading ? (
         <div className="flex justify-center">
           <img src={Spinner} alt="spinner" className="w-20" />
         </div>
       ) : (
         <main className="">
-          <div className="w-[350px] bg-white rounded-md shadow p-6 h-[440px]">
+          <div className="w-[300px] bg-white rounded-md shadow p-6 h-[440px]">
             <div
               className="aspect-w-1 aspect-h-1 mb-4 bg-transparent"
               key={product.id}

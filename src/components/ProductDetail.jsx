@@ -18,20 +18,21 @@ import { CartContext } from "../context/cart";
 const ProductDetail = ({ product, closeDetail }) => {
   const { addToCart, cartItems } = useContext(CartContext);
   return (
-    <div className=" ">
-      <div
-        className="bg-black text-white px-2 py-1 cursor-pointer absolute top-10 z-30 right-10"
-        onClick={closeDetail}
-      >
-        CLOSE
-      </div>
-      <div className="absolute top-0 right-0 left-0 bottom-0 justify-center flex w-full h-full items-center p-6  z-20 bg-white">
-        <div className="md:flex block  justify-center mt-6 w-full gap-3 mx-auto">
+    <div className=" fixed inset-0 flex items-center justify-center bg-white z-30">
+      <div className="mt-20 sm:mt-5 flex items-center flex-col">
+        <div
+          className="bg-black text-white px-2 py-1 cursor-pointer   md:self-end  mb-4"
+          onClick={closeDetail}
+        >
+          CLOSE
+        </div>
+        <div className="md:flex block  justify-center  w-full gap-7 mx-auto md:border-2 p-10 rounded-md md:border-gray-800 ">
           <div className="aspect-w-1 aspect-h-1 mb-4 bg-transparent flex justify-center items-center">
             <img
               src={product.image}
               alt=""
               className="object-contain w-64 h-64 rounded-md cursor-pointer transform hover:scale-110 transition-transform duration-300 hover:opacity-70"
+              onClick={closeDetail}
             />
           </div>
           <div>

@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
   };
   return (
     <main className=" ">
-      <div className="border p-5 shadow-lg rounded-md  h-[430px] bg-white md:max-w-64">
+      <div className="border p-5 shadow-lg rounded-md  h-[430px] bg-white md:max-w-auto">
         <div
           className="aspect-w-1 aspect-h-1 mb-4 bg-transparent"
           key={product.id}
@@ -78,7 +78,11 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
       {isDetailOpen && (
-        <ProductDetail product={product} closeDetail={closeDetail} />
+        <ProductDetail
+          product={product}
+          closeDetail={closeDetail}
+          className="h-screen absolute justify-center flex items-center z-30 bg-white"
+        />
       )}
       <ToastContainer
         position="top-right"

@@ -60,7 +60,7 @@ const Cart = () => {
         theme="dark"
         // transition={Slide}
       />
-      <div className="absolute bg-gray-100 top-14 right-0 md:right-7 p-4 h-full md:h-3/4 z-10 w-full md:w-1/2 shadow-md rounded-md overflow-y-scroll">
+      <div className="absolute bg-gray-100 top-14 right-0 md:rigdht-7 p-4 h-screen z-10 w-full md:w-1/2 shadow-md rounded-md overflow-y-scroll">
         {/* <NavBar /> */}
         <div className="flex flex-col items-center  justify-center  pt-2 gap-4">
           <h1 className="font-semibold text-4xl ">MY CART</h1>
@@ -72,9 +72,9 @@ const Cart = () => {
                 {cartItems.map((item) => (
                   <div className="flex items-center gap-3 border-2 mb-2 bg-white p-2 shadow-lg rounded-md w-full">
                     <div className="items-center flex relative flex-col sm:flex-row justify-center gap-2 w-full">
-                      <div className="absolute top-5 right-5  ">
+                      <div className="absolute top-5 right-5  z-50">
                         <IoTrashSharp
-                          className="text-gray-500 hover:text-red-600 cursor-pointer text-lg"
+                          className="text-gray-500 hover:text-red-600 cursor-pointer text-lg z-50"
                           onClick={() => {
                             removeItem(item);
                             toastRemoveFromCart();
@@ -84,7 +84,7 @@ const Cart = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-contain w-full h-64 rounded-md cursor-pointer transform  hover:opacity-70 max-w-64"
+                        className="object-contain w-fujll h-64 rounded-md cursor-pointer transform  hover:opacity-70 max-w-64 p-6"
                       />
                       {/* hover:scale-110 transition-transform duration-300 */}
                       <div className="flex flex-col items-center text-center sm:text-start sm:items-start w-full">

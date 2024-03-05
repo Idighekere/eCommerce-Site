@@ -6,6 +6,7 @@ import FeaturedProductsCard from "../components/FeaturedProductsCard";
 import Hero from "../components/Hero";
 // import { Carousel } from "flowbite-react";
 import { IoRocket, IoKeySharp, IoCashOutline } from "react-icons/io5";
+import Carousel from "../components/Carousel";
 const Home = () => {
   const [featuredProducts, setFeaturedProduct] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -30,6 +31,9 @@ const Home = () => {
         {" "}
         <Hero />
       </div>{" "}
+      <section className="px-7 my-10 flex justify-center items-center p-">
+        <Carousel featuredProducts={featuredProducts} />
+      </section>
       <section className="bg-gray-800 text-white mt-3 p-10">
         <div>
           <SectionOne />
