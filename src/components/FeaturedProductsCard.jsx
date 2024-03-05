@@ -45,7 +45,7 @@ const FeaturedProductsCard = ({ product, loading }) => {
         </div>
       ) : (
         <main className="">
-          <div className="w-[300px] bg-white rounded-md shadow p-6 h-[440px]">
+          <div className="w-[250px] bg-white rounded-md shadow p-6 h-[440px]">
             <div
               className="aspect-w-1 aspect-h-1 mb-4 bg-transparent"
               key={product.id}

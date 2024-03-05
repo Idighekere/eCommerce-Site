@@ -116,9 +116,9 @@ const NavBar = () => {
               <a href="/contact-us">Contact Us </a>
               <a href="/about">Privacy Policy</a>
               {/* <CartIcon /> */}
-              <div className="absolute bottom-7 ">
-                <div className="border-t mt-3 md:mt-6 capitalize border-gray-800 w-full">
-                  <h2 className="text-lg">All Rights Reserved</h2>
+              <div className="absolute bottom-10 ">
+                <div className="border-t mb-10 md:mt-6 capitalize border-gray-800 w-full">
+                  <h2 className="text-base">All Rights Reserved</h2>
                   <div className="flex text-3xl md:text-4xl gap-2">
                     <IoLogoFacebook />
                     <IoLogoGithub />
